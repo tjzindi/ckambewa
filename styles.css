@@ -111,9 +111,11 @@ nav {
     background-attachment: fixed;
     color: var(--white);
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* Align content to the top */
     position: relative;
     overflow: hidden;
+    padding-top: 140px; /* Push content below the fixed navbar */
+    padding-bottom: 40px; /* Ensure space at the bottom */
 }
 
 .hero::before {
