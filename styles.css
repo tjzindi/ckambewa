@@ -577,6 +577,13 @@ footer {
         font-size: 1rem;
     }
 
+    .hero,
+    .expertise,
+    .contact {
+        /* Disables parallax on mobile for better performance and compatibility */
+        background-attachment: scroll;
+    }
+
     .about-content {
         grid-template-columns: 1fr;
     }
