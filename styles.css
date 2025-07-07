@@ -313,6 +313,9 @@ nav {
 
 .expertise-item h3 {
     color: var(--accent-color);
+    -webkit-text-stroke-color: #1a4c3a;
+    -webkit-text-stroke-width: 0.5px;
+    font-size: 1.2rem;;
     margin-bottom: 1rem;
 }
 
