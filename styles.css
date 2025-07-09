@@ -383,7 +383,7 @@ nav {
 /* Shared content styles */
 .partner-logo,
 .hover-logo {
-  width: 80px;
+  width: 100px;
   height: auto;
 }
 
@@ -410,6 +410,16 @@ nav {
   background-color: var(--accent-color);
 }
 
+/* Responsive: Stack partner cards vertically on small screens */
+@media (max-width: 600px) {
+  .partner-card {
+    margin-bottom: 30px;
+  }
+  .flip-inner {
+    min-height: 180px;
+  }
+}
+
 /* Contact Section */
 .contact {
     padding: 80px 10px;
@@ -417,7 +427,7 @@ nav {
     background-size: cover;
     background-position: center;
     background-attachment: scroll;
-    color: var(--white);
+    color: var(--primary-color);
     position: relative;
     overflow: hidden;
 }
