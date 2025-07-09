@@ -334,92 +334,63 @@ nav {
     margin-right: 10px;
 }
 
-.partners-grid {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+.partner-card {
+  perspective: 1000px;
 }
 
-.partner-card {
+.flip-inner {
   position: relative;
-  background: var(--white);
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s ease;
+  transform-style: preserve-3d;
+  min-height: 250px;
+}
+
+.partner-card:hover .flip-inner {
+  transform: rotateY(180deg);
+}
+
+/* FRONT + BACK sides */
+.flip-front,
+.flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
   border: 1px solid var(--gray);
   border-radius: 8px;
   padding: 1.5rem;
-  transition: box-shadow 0.3s ease;
-  overflow: hidden;
-  min-height: 200px;
-}
-
-.partner-card:hover {
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-/* Default view */
-.partner-default {
+  background: var(--white);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 1rem;
-  transition: opacity 0.3s ease;
-}
-
-.partner-logo {
-  width: 80px;
-  height: auto;
-}
-
-.partner-name {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: var(--primary-color);
-}
-
-/* Hover view */
-.partner-hover {
-  position: absolute;
-  inset: 0;
-  display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--white);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-}
-
-.partner-card:hover .partner-default {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.partner-card:hover .partner-hover {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-/* Middle 2/3 area */
-.hover-content {
-  width: 80%;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
+  backface-visibility: hidden;
+  gap: 1rem;
 }
 
+/* Front side */
+.flip-front {
+  z-index: 2;
+}
 
+/* Back side */
+.flip-back {
+  transform: rotateY(180deg);
+}
+
+/* Shared content styles */
+.partner-logo,
 .hover-logo {
   width: 80px;
   height: auto;
 }
 
+.partner-name,
 .hover-name {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
+  font-weight: bold;
   color: var(--primary-color);
   margin: 0;
 }
@@ -432,6 +403,7 @@ nav {
   border-radius: 4px;
   font-weight: bold;
   transition: background 0.3s ease;
+  margin-top: 1rem;
 }
 
 .enter-button:hover {
