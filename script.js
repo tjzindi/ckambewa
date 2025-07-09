@@ -217,6 +217,21 @@ if (aboutSection) {
     observer.observe(aboutSection);
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll('.partner-card');
+
+  cards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      card.classList.add('active');
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.classList.remove('active');
+    });
+  });
+});
+
+
 // Back to Top button functionality
 const backToTopButton = document.querySelector('.back-to-top');
 
