@@ -334,13 +334,120 @@ nav {
     margin-right: 10px;
 }
 
+.partners-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.partner-card {
+  position: relative;
+  background: var(--white);
+  border: 1px solid var(--gray);
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: box-shadow 0.3s ease;
+  overflow: hidden;
+  min-height: 200px;
+}
+
+.partner-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Default view */
+.partner-default {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  transition: opacity 0.3s ease;
+}
+
+.partner-logo {
+  width: 80px;
+  height: auto;
+}
+
+.partner-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+/* Hover view */
+.partner-hover {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--white);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.partner-card:hover .partner-default {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.partner-card:hover .partner-hover {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Middle 2/3 area */
+.hover-content {
+  width: 80%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+
+.hover-logo {
+  width: 80px;
+  height: auto;
+}
+
+.hover-name {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.enter-button {
+  background-color: var(--primary-color);
+  color: var(--white);
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.enter-button:hover {
+  background-color: var(--accent-color);
+}
+
 /* Contact Section */
 .contact {
-    padding: 80px 0;
-    background: linear-gradient(rgba(233, 245, 240, 0.95), rgba(233, 245, 240, 0.95)), url('assets/contact.jpg');
+    padding: 80px 10px;
+    background: linear-gradient(rgba(233, 245, 240, 0.938), rgba(233, 245, 240, 0.178)), url('assets/map1.png');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    background-attachment: scroll;
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
 }
 
 .contact-content {
