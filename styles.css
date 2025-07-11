@@ -500,6 +500,19 @@ nav {
     background: var(--primary-color);
 }
 
+.intro-video-wrapper {
+    margin: 2rem auto;
+    border-radius: 10px;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.intro-video {
+    display: block;
+    width: 100%;
+    transform: scale(1.15); /* Scale up to crop the edges */
+}
+
 /* Footer */
 footer {
     background: var(--primary-color);
